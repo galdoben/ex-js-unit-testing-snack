@@ -19,10 +19,25 @@ function isPalindrome(string) {
     return string.split("").reverse().join("") === string;
 }
 
+//funzione per trovare un post per id
+function findPostById(posts, id) {
+    if (!Array.isArray(posts)) {
+        throw new Error("I post devono essere un array");
+    }
+    if (typeof id !== 'number') {
+        throw new Error("L'id deve essere un numero");
+    }
+    if (posts.some(post => typeof post.id !== 'number' || !post.title || !post.slug)) {
+        throw new Error("Ogni post deve avere un id, un titolo e uno slug");
+    }
+    return posts.find(post => post.id === id);
+}
 
 module.exports = {
     getInitials,
     createSlug,
     average,
-    isPalindrome
+    isPalindrome,
+    findPostById
+
 }
