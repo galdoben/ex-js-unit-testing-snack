@@ -11,12 +11,15 @@ function average(array) {
     return array.reduce((a, b) => a + b) / array.length
 }
 
-
-
+//funzione per verificare se una stringa è palindroma
+function isPalindrome(string) {
+    return string.split("").reverse().join("") === string;
+}
 
 
 module.exports = {
     getInitials,
     createSlug,
-    average
+    average,
+    isPalindrome
 }
