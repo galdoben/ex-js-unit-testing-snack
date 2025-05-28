@@ -22,3 +22,9 @@ test('la funzione "createSlug" deve sostituire gli spazi con "-"', () => {
 test('La funzione "isPalindrome" verifica se una stringa si legge in ugual modo da sinistra a destra e viceversa', () => {
     expect(isPalindrome('radar')).toBeTruthy();
 });
+
+test('la funzione "createSlug" lancia un errore se il titolo è vuoto', () => {
+    expect(() => createSlug("")).toThrow();
+    expect(() => createSlug(null)).toThrow();
+    expect(() => createSlug(undefined)).toThrow();
+});

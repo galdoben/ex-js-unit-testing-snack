@@ -4,6 +4,9 @@ function getInitials(fullName) {
 }
 //funzione per creare uno slug
 function createSlug(string) {
+    if (string === "") {
+        throw new Error("Il titolo non può essere vuoto");
+    }
     return string.toLowerCase().replaceAll(" ", "-");
 }
 //funzione per calcolare la media aritmetica di un array di numeri
